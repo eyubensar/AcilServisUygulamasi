@@ -1,0 +1,91 @@
+cil Servis Hasta Yonetim Sistemi
+
+Bu proje, C programlama dili kullanılarak yazılmış bir Acil Servis Hasta Yönetim Sistemidir. Sistem, hastaların öncelikli kuyruk (priority queue) mantığına göre aciliyet seviyelerine bağlı olarak sıralandığı, eklenip çıkarılabildiği ve yönetilebildiği bir yapı sunar.
+
+🚑 Proje Özellikleri
+
+Hasta Ekleme 🏥: Hastalar, isim, yaş ve aciliyet seviyelerine göre sisteme eklenir.
+
+Hasta Listeleme 📋: Öncelikli sıraya göre hastalar görüntülenir.
+
+Hasta İşleme Alma ⚕️: En yüksek öncelikli hasta işleme alınır ve HL7 formatında bilgileri gösterilir.
+
+Reçete Yazma 💊: İşleme alınan hastaya rastgele reçete numarası oluşturulur.
+
+Hasta Silme ❌: Belirtilen hasta sistemden kaldırılır.
+
+Toplam Hasta Sayısı 🔢: Sistemde kayıtlı toplam hasta sayısını gösterir.
+
+🛠 Kullanılan Teknolojiler
+
+C Programlama Dili
+
+Bağlı Liste (Linked List) Veri Yapısı
+
+Öncelikli Kuyruk (Priority Queue) Algoritması
+
+HL7 Formatında Hasta Kaydı
+
+📥 Kurulum & Kullanım
+
+Projeyi klonlayın:
+
+git clone https://github.com/kullaniciadi/acil-servis-hasta.git
+cd acil-servis-hasta
+
+Derleme:
+
+gcc hasta_yonetim.c -o hasta_yonetim
+
+Çalıştırma:
+
+./hasta_yonetim
+
+📌 Kod Akışı
+
+Kullanıcı, terminal üzerinden seçenekler arasından bir işlem yapar.
+
+Hasta Ekleme durumunda, hasta bilgileri alınır ve öncelikli kuyruk yapısına göre uygun yere eklenir.
+
+Hasta Listeleme ile mevcut hastalar görüntülenir.
+
+Hasta İşleme Alma ile en yüksek öncelikli hasta sistemden çıkarılır.
+
+Reçete Yazma işlemi ile işleme alınan hasta için bir reçete numarası oluşturulur.
+
+Hasta Silme ile istenen hasta sistemden kaldırılır.
+
+Hasta Sayısı Gösterme ile toplam hasta sayısı görüntülenir.
+
+Çıkış seçeneği ile program sonlandırılır.
+
+🔄 Akış Şeması
+
+Aşağıda, programın genel akış şeması yer almaktadır:
+
+graph TD;
+    A[Program Başlangıcı] --> B{İşlem Seç}
+    B -->|1. Hasta Ekle| C[Hasta Bilgileri Al]
+    C --> D[Öncelikli Kuyrukta Uygun Yere Ekle]
+    D --> B
+    B -->|2. Hasta Listele| E[Hasta Listesini Göster]
+    E --> B
+    B -->|3. Hasta İşleme Al| F[En Öncelikli Hastayı Çıkar]
+    F --> G[HL7 Formatında Bilgi Göster]
+    G --> B
+    B -->|4. Reçete Yaz| H[Rastgele Reçete No Üret]
+    H --> B
+    B -->|5. Hasta Sil| I[Silinecek Hasta Bilgilerini Al]
+    I --> J[Bağlı Listeden Hastayı Çıkar]
+    J --> B
+    B -->|6. Hasta Sayısını Göster| K[Toplam Hasta Sayısını Yazdır]
+    K --> B
+    B -->|7. Çıkış| L[Programı Sonlandır]
+
+📜 Lisans
+
+Bu proje MIT Lisansı ile lisanslanmıştır.
+
+📧 İletişim:
+Eğer bir hata ile karşılaşırsanız ya da geliştirme öneriniz varsa, lütfen Pull Request veya Issue açarak katkıda bulunun! 😊
+
